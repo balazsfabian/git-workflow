@@ -132,7 +132,7 @@ git branch -d cool_idea
 ```
 
 ## Using Hosted Remote Repositories
-Yippy! My project is now completely safe! Or is it? Git stores the snapshost (commits) and other relevant data
+Yippy! Your project is now completely safe! Or is it? Git stores the snapshost (commits) and other relevant data
 in the top directory of your project, in a folder called `.git`. If you are really insistent of scrubbing the project,
 there is no arguing with a good old-fashioned `rm -rf .git`. This deletes the complete history of your project that
 was kept safe by Git. However, you can make use of the ***distributed*** nature of Git by pushing your project into
@@ -140,5 +140,18 @@ a remote repository. A remote repository can be anywhere: another folder on your
 on a server like GitHub/GitLab/BitBucket. These provide additional fancy options such as Continuous Integration or Code Deployment.
 
 ### Setting Up a Repository on GitHub/GitLab
+When you set up a remote repository (or just ***remote***), your project is copied onto the server with all its files, commits and commit tree. Now, you have the additional task of keeping your local and remote trees synced. Based on whether you are starting a new project on GitHub or want to push an already existing repository, GitHub guides you through the setup process.
 
-### Pushing/Pulling from/to Remotes
+### Pushing/Pulling to/from Remotes
+The simplest case of working with a remote is when working alone.
+* Origin: name of the default remote repository
+* Fetching: retrieving the latest commits from a remote without changing your master. The new stuff can be merged into master.
+* Pulling: fetching + merging in one step, assuming no merge conflict occur.
+* Pushing: updating the remote repository with your changes.
+``` bash
+git fetch origin
+git merge origin master
+
+# or equivalently
+git pull origin master
+```
