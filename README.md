@@ -11,7 +11,8 @@ Possible status of files in a version-controlled folder:
 - Untracked: a file that is not version controlled
 - Unmodified: a version controlled file without changes
 - Modified: a version controlled file with changes
-- Staged: a changed or new file to be commited 
+- Staged: a changed or new file to be commited
+Their relationships are demonstrated in the figure below: ![LifeCycle](lifecycle.png)
 
 ## Working Locally
 
