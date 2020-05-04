@@ -30,6 +30,16 @@ renamed or deleted.
 
 ## Working Locally
 
+### First-time Setup
+Git needs to know your name and email address, as these are baked into every comment. Based on this, other users know who to turn to in case they have an issue (or they `git blame` you):
+``` bash
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+git config --global core.editor vim
+# git supports aliases
+git config --global alias.co checkout
+```
+
 ### Creating a Repository from Scratch
 
 ### Staging Files
