@@ -158,4 +158,5 @@ git pull origin master
 
 ### Git Workflows
 When working in a Team, there are several possible [Distributed Workflows](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows). Of course, all Workflows need at least some coordination between the members of the team, so teammates are not interfering with/undoing the changes made by others. For this, it is useful to always perform at least a `git fetch` before starting to work on something new. We adopt the Integration-Manager Workflow that enables us to track changes and issues to a greater extent than just pushing to a common repository:
+![Integration-manage](integration-manager.png)
 
