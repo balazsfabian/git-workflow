@@ -96,11 +96,49 @@ git log --all --decorate --graph
 # oh, that was a mouthful! Let's alias it!
 git config --global alias.longlog=log --all --decorate --graph
 ```
+Care to see how the project looked a few commits ago? That means you need to move your `HEAD` to the
+commit you want to inspect. Git then places the files of that revision of your project in your directory.
+``` bash
+git checkout <commit_hash> | <branch_name> | <tag>
+```
 
 ### Setting Up and Navigating Between Branches
+Let's say that you are working on your `master` branch. Suddenly, a cool idea strikes you, and you need to try
+it immediately. Of course, as an experimental project, you should not commit it in master. You can create a
+new branch, do some commits and then merge it into master/delete it/leave it for later:
+``` bash
+# checkout the commit where you want to branch off, then:
+git checkout -b cool_idea
+
+# or equivalently
+git branch cool_idea
+git checkout cool_idea
+
+# after you do some commits, you might want to return to master:
+git checkout master
+```
+
+### Merging a Branch
+When a cool idea turns out just fine, you can incorporate it into the master branch. As with every aspect of Git, there
+are many possible scenarios for this. In the simplest case, its a breeze. At other times, you need to read about ***merge conflicts***. It is usually a good idea to use `git mergetool` for this:
+``` bash
+git checkout master
+
+git merge cool_idea
+
+# when the merge is succesful, you can delete the branch
+# this only deletes the pointer that became unnecessary after the merge
+git branch -d cool_idea
+```
 
 ## Using Hosted Remote Repositories
+Yippy! My project is now completely safe! Or is it? Git stores the snapshost (commits) and other relevant data
+in the top directory of your project, in a folder called `.git`. If you are really insistent of scrubbing the project,
+there is no arguing with a good old-fashioned `rm -rf .git`. This deletes the complete history of your project that
+was kept safe by Git. However, you can make use of the ***distributed*** nature of Git by pushing your project into
+a remote repository. A remote repository can be anywhere: another folder on your machine, a friends PC, or more conveniently
+on a server like GitHub/GitLab/BitBucket. These provide additional fancy options such as Continuous Integration or Code Deployment.
 
-### Setting Up a Repository on Github/Gitlab
+### Setting Up a Repository on GitHub/GitLab
 
 ### Pushing/Pulling from/to Remotes
