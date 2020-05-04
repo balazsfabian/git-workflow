@@ -41,14 +41,63 @@ git config --global alias.co checkout
 ```
 
 ### Creating a Repository from Scratch
+You can create a new git repository by typing:
+``` bash
+cd /path/to/your/existing/code
+git init
+
+# or alternatively
+git init <project directory>
+```
 
 ### Staging Files
+When you finish a logical chunk of your work, you can create a new commit. There are many options to handcraft a commit, using the main tool `git add`. Adding a file moves it into the staging are. This means that the file is flagged to be committed in the next commit. You can view the current status of the files using `git status`
+``` bash
+git add filename
+
+# add only parts of a file. The rest is kept unstaged or modified
+git add --patch filename
+
+# oops! You've added something that you did not mean to...
+git reset <file>
+# ...or you can "un-add" all:
+git reset
+
+# now, let's see what's up with our files
+git status
+```
 
 ### Commiting Files
+Now that you managed to perfectly tailor the files in the next commit, you can `git commit` them:
+``` bash
+# typing the following launches your text editor. Here, its vim.
+# you can type your commit message there. The first line should
+# be a short summary, followed by an empty line and then a more
+# verbose description of the changes.
+git commit
+
+# only want a short commit message?
+git commit -m "Short commit message"
+
+# darn, messed up the commit message, and left a file out...
+git add missing_file
+git commit --amend
+```
 
 ### Checking Older Versions
+Awesome! We have some commits in our project, and we can navigate between them. This way, we can check
+what was changed between versions (or commits). The simplest way to print the commit tree is `git log`:
+``` bash
+git log
 
-### 
+# or a nicer version with other branches visible, too
+git log --all --decorate --graph
+
+# oh, that was a mouthful! Let's alias it!
+git config --global alias.longlog=log --all --decorate --graph
+```
+
+### Setting Up and Navigating Between Branches
 
 ## Using Hosted Remote Repositories
 
