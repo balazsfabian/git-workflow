@@ -160,6 +160,19 @@ git pull origin master
 When working in a Team, there are several possible [Distributed Workflows](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows). Of course, all Workflows need at least some coordination between the members of the team, so teammates are not interfering with/undoing the changes made by others. For this, it is useful to always perform at least a `git fetch` before starting to work on something new. We adopt the Integration-Manager Workflow that enables us to track changes and issues to a greater extent than just pushing to a common repository:
 ![Integration-manage](integration-manager.png)
 
+### Example Integartion Manager Workflow
+TODO: expound this part. Useful link: https://wellfire.co/learn/illustrated-distributed-git-workflow/
+Alice and Bob want to collaborate on a project...
+1. PULLING FROM CANONICAL MASTER
+2. BRANCHING
+3. DOING CHANGES
+4. PUSHING TO DEVELOPER'S MASTER
+5. PULL REQUESTS
+6. HANDLING PULL REQUESTS: CODE REVIEW
+7. UPDATING PULL REQUESTS
+8. ACCEPTING PULL REQUESTS
+9. GOTO 1
+
 ## What not to do...
 * Git grants you the superpower of changing history. This way, you can customize the content/order of your commits. With great power, comes great responsiblity! Never modify a commit that is already on the remote, as it makes life a ***lot*** more complicated!
 * Don’t commit directly to the master or development branches, as this usually circumvents Continous Integration.
