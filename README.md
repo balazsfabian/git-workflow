@@ -97,6 +97,9 @@ git log --all --decorate --graph
 git config --global alias.longlog=log --all --decorate --graph
 # now you can do
 git longlog
+
+# ...by the way, what branches exist?
+git branch
 ```
 Care to see how the project looked a few commits ago? That means you need to move your `HEAD` to the
 commit you want to inspect. Git then places the files of that revision of your project in your directory.
